@@ -28,6 +28,7 @@ public class Task6 {
 			}
 		}
 		System.out.println(count1);
+		
 		//var2
 		for (int i=1; i < 1000000; i++)
 		{
