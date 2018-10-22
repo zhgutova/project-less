@@ -11,7 +11,8 @@ public class Task6 {
 		 каждого счастливого билета и теперь раздумывает, как много сувениров потребуется. С помощью программы 
 		 подсчитайте сколько счастливых билетов в одном рулоне?
 		 */
-		int count = 0;
+		int count1 = 0, count2 = 0;
+		//var1
 		for (int a=0; a<10; a++)
 			for (int b=0; b<10; b++)
 				for (int c=0; c<10; c++)
@@ -23,10 +24,19 @@ public class Task6 {
 			if ((a+b+c)==(d+e+f))
 			{
 				//System.out.println(a+ " " + b + " " + c + " " + d + " " + e + " " + f);
-				count++;
+				count1++;
 			}
 		}
-		System.out.print(count);
+		System.out.println(count1);
+		//var2
+		for (int i=1; i < 1000000; i++)
+		{
+			if (i%10 + i/10 % 10 + i/100 % 10 == i/1000 %10 + i/10000 % 10 + i/100000 % 10)
+			{
+				count2++;
+			}
+		}
+		System.out.println(count2);
 		
 	}
 
