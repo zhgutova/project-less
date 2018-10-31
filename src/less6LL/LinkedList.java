@@ -12,10 +12,18 @@ public class LinkedList implements List, Stack, Queue {
 
 	@Override
 	public void add (Object value, int index) {
-		if (index > size())
-			System.out.println("add Индекс превышает размер списка!");
+		if (index > size()) {
+			System.out.print("add Индекс превышает размер списка! ");
+			push(value);
+		}
+		else if (isEmpty()) {
+			System.out.print("add Список пуст");
+			push(value);
+		}
 		else {
 		//добавление по индексу
+			(get(index)).setValue(value);
+			System.out.println("add Добавлен элемент по индексу");
 		}
 	}
 	
@@ -30,15 +38,18 @@ public class LinkedList implements List, Stack, Queue {
 	@Override
 	public void unShift() {
 		// TODO Auto-generated method stub
-		if (isEmpty())
+		if (isEmpty()) {
 			System.out.println("unShift Список пуст! Нет элементов для извлечения");
+			return;
+		}
 		if (size() == 1) {
 			head = null;
 			System.out.println("unShift Извлечен последний элемент. Список пуст!");
+			return;
 		}
-		else {
-			//удаление первого элемента с начала списка
-		}
+		head = get(2);
+		System.out.println("unShift Извлечен первый элемент");	
+
 	}
 
 	
@@ -78,15 +89,18 @@ public class LinkedList implements List, Stack, Queue {
 	}
 
 	@Override
-	public void get(int index) {
+	public Node get(int index) {
 		// TODO Auto-generated method stub
-		if (size() == 0)
-			System.out.println("get Список пуст! Нет элементов для получения по индексу");
-		else if (index > size())
-			System.out.println("get Индекс превышает размер списка! Нет элементов для получения по индексу");
-		else {
-			//взять по индексу
+		if ((size() == 0)|(index > size())) 
+				return (null);
+			//System.out.println("get Список пуст! Нет элементов для получения по индексу");
+	//	else if (index > size())
+			//System.out.println("get Индекс превышает размер списка! Нет элементов для получения по индексу");
+		Node n = head;
+		for (int i = 1; i < index; i++) {
+			n = n.next;
 		}
+			return n;		
 	}
 
 	@Override
@@ -113,6 +127,10 @@ public class LinkedList implements List, Stack, Queue {
 		}
 		else {
 			//добавление в начало списка
+			Node newHead = new Node(value);
+			newHead.next = head;
+			head = newHead;
+			System.out.println("shift Добавлен элемент в начало списка");
 		}
 	}
 
@@ -130,6 +148,15 @@ public class LinkedList implements List, Stack, Queue {
 		}
 	}
 
-	
+	public void printList() {
+		if (isEmpty())
+			System.out.println("Список пуст");
+		int i = 1;
+		while (i != size() + 1) {
+			System.out.println("Элемент по индексу " + i + " " + get(i).value);
+			i++;
+		}
+		
+	}
 
 }
