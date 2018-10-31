@@ -12,7 +12,11 @@ public class LinkedList implements List, Stack, Queue {
 
 	@Override
 	public void add (Object value, int index) {
-		push (value);
+		if (index > size())
+			System.out.println("add Индекс превышает размер списка!");
+		else {
+		//добавление по индексу
+		}
 	}
 	
 	private Node last() {
@@ -64,7 +68,13 @@ public class LinkedList implements List, Stack, Queue {
 	@Override
 	public void remove(int index) {
 		// TODO Auto-generated method stub
-		
+		if (size() == 0)
+			System.out.println("remove Список пуст!");
+		else if (index > size())
+			System.out.println("remove Индекс превышает размер списка!");
+		else {
+		//удаление элемента по индексу
+		}
 	}
 
 	@Override
