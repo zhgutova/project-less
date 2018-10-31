@@ -45,13 +45,20 @@ public class Main {
 		list.printList();
 		list.shift(data1);
 		list.printList();
-		list.unShift();
+		
+		list.remove(9);
+		list.remove(1);
 		list.printList();
+		System.out.println();
 		
 		list.unShift();
 		list.printList();
+		System.out.println("Размер списка = " + list.size());
 		list.unShift();
 		list.printList();
+		list.unShift();
+		list.printList();
+		System.out.println("Размер списка = " + list.size());
 		list.unShift();
 		list.printList();
 

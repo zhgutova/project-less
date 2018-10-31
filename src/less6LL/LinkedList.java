@@ -79,12 +79,21 @@ public class LinkedList implements List, Stack, Queue {
 	@Override
 	public void remove(int index) {
 		// TODO Auto-generated method stub
-		if (size() == 0)
+		if (isEmpty())
 			System.out.println("remove Список пуст!");
 		else if (index > size())
 			System.out.println("remove Индекс превышает размер списка!");
+		else if (index == 1) {
+			head = get(index+1);
+			System.out.println("remove Удален первый элемент из списка" );
+		}
+		else if (index == size()) {
+			(get(index - 1).next) = null;
+			System.out.println("remove Удален последний элемент из списка" );
+		}
 		else {
-		//удаление элемента по индексу
+			get(index - 1).next = get(index).next;
+			System.out.println("remove Удален элемент из списка по индексу " + index);
 		}
 	}
 
