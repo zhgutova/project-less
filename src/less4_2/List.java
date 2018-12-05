@@ -1,6 +1,5 @@
 package less4_2;
 
-import java.util.Arrays;
 
 public class List {
 

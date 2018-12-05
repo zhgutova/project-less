@@ -6,31 +6,31 @@ public class TaskStr1 {
 
 	public static void main(String[] args) {
 		/*
-		 1) Найти в строке указанную подстроку и заменить ее на новую. 
-Строку, ее подстроку для замены и новую подстроку вводит пользователь. 
+		 1) РќР°Р№С‚Рё РІ СЃС‚СЂРѕРєРµ СѓРєР°Р·Р°РЅРЅСѓСЋ РїРѕРґСЃС‚СЂРѕРєСѓ Рё Р·Р°РјРµРЅРёС‚СЊ РµРµ РЅР° РЅРѕРІСѓСЋ. 
+РЎС‚СЂРѕРєСѓ, РµРµ РїРѕРґСЃС‚СЂРѕРєСѓ РґР»СЏ Р·Р°РјРµРЅС‹ Рё РЅРѕРІСѓСЋ РїРѕРґСЃС‚СЂРѕРєСѓ РІРІРѕРґРёС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ. 
 		 */
 
-		System.out.println("Введите строку");
+		System.out.println("Р’РІРµРґРёС‚Рµ СЃС‚СЂРѕРєСѓ");
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
-		System.out.println("в которой нужно заменить подстроку");
+		System.out.println("РІ РєРѕС‚РѕСЂРѕР№ РЅСѓР¶РЅРѕ Р·Р°РјРµРЅРёС‚СЊ РїРѕРґСЃС‚СЂРѕРєСѓ");
 		String strSub = sc.nextLine();		
-		System.out.println("на подстроку");
+		System.out.println("РЅР° РїРѕРґСЃС‚СЂРѕРєСѓ");
 		String strSubN = sc.nextLine();	
 		String strN = str.replaceAll(strSub, strSubN);
-		System.out.println("Итоговая строка:" );
+		System.out.println("РС‚РѕРіРѕРІР°СЏ СЃС‚СЂРѕРєР°:" );
 		System.out.println(strN);
 		sc.close();
 		
 		/*
-		 2) Требуется удалить из нее повторяющиеся символы и все пробелы. 
+		 2) РўСЂРµР±СѓРµС‚СЃСЏ СѓРґР°Р»РёС‚СЊ РёР· РЅРµРµ РїРѕРІС‚РѕСЂСЏСЋС‰РёРµСЃСЏ СЃРёРјРІРѕР»С‹ Рё РІСЃРµ РїСЂРѕР±РµР»С‹. 
 		 */
 		
-        // заменяет все цифры на пробел *.replaceAll("[0-9]+", " ");
-        // заменяет все буквы на слово 123 *.replaceAll("[a-zA-Z]+", "123");
+        // Р·Р°РјРµРЅСЏРµС‚ РІСЃРµ С†РёС„СЂС‹ РЅР° РїСЂРѕР±РµР» *.replaceAll("[0-9]+", " ");
+        // Р·Р°РјРµРЅСЏРµС‚ РІСЃРµ Р±СѓРєРІС‹ РЅР° СЃР»РѕРІРѕ 123 *.replaceAll("[a-zA-Z]+", "123");
 		
-	//	String strN = "теееекст   теkкст";
-		System.out.println("Убираем пробелы:");
+	//	String strN = "С‚РµРµРµРµРєСЃС‚   С‚РµkРєСЃС‚";
+		System.out.println("РЈР±РёСЂР°РµРј РїСЂРѕР±РµР»С‹:");
 		String strN1 = strN.replaceAll("\\s", "");
 	//	int count = 0;
 		
@@ -45,7 +45,7 @@ public class TaskStr1 {
 					sb.deleteCharAt(j);
 					j--;
 				}	
-		System.out.println("Убираем повторные элементы:");
+		System.out.println("РЈР±РёСЂР°РµРј РїРѕРІС‚РѕСЂРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹:");
 		System.out.println(sb.toString());		
 	//	System.out.println(count);	
 		
