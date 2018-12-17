@@ -7,10 +7,10 @@ public class Sensor {
 	private ArrayList<Alarm> listAlarm = new ArrayList<>();
 	
 	public void add(Alarm alarm) {
+		//доделать проверку на уникальность
 		this.listAlarm.add(alarm);
 	}
 	
-
 	
 	public void notify(int temp) {
 		for (Alarm alarm : listAlarm)
